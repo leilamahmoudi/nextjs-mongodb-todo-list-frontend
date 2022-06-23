@@ -302,6 +302,7 @@ a {
   border-radius: 5px;
   background-color: #efefef;
   word-break: break-all;
+  cursor: pointer;
 }
 
 .list__todo-item:hover {
