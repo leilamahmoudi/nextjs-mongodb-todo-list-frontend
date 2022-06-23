@@ -5,7 +5,9 @@ import { useRouter } from "next/router";
 const RemoveTodoBtn = ({ todo }) => {
   const router = useRouter();
   const deleteTodoAPICall = async (todoId) => {
-    const res = await axios.delete(`http://localhost:8000/api/todos/${todoId}`);
+    const res = await axios.delete(
+      `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos/${todoId}`
+    );
     return res.data;
   };
   const removeTodo = async (todoId) => {

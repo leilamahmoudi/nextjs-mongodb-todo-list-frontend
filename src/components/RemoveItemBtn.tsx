@@ -7,7 +7,7 @@ const RemoveTodoBtn = ({ todoId, itemId }) => {
 
   const deleteTodoAPICall = async () => {
     const res = await axios.delete(
-      `http://localhost:8000/api/todos/${todoId}/items/${itemId}`
+      `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos/${todoId}/items/${itemId}`
     );
     refreshData();
     return res.data;

@@ -14,7 +14,7 @@ const todo = ({ todoObject, items }) => {
 
   const updateItemAPICall = async (itemObj, itemId) => {
     const res = await axios.put(
-      `http://localhost:8000/api/todos/${todoObject.id}/items/${itemId}`,
+      `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos/${todoObject.id}/items/${itemId}`,
       itemObj
     );
     return res.data;
@@ -114,12 +114,12 @@ const todo = ({ todoObject, items }) => {
 export const getServerSideProps = async (pageContext) => {
   let todoId = pageContext.query.todoId;
   const apiResponseTodo = await fetch(
-    `http://localhost:8000/api/todos/${todoId}`
+    `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos/${todoId}`
   );
   const apiJsonTodo = await apiResponseTodo.json();
   const todoObject = apiJsonTodo;
   const apiResponse = await fetch(
-    `http://localhost:8000/api/todos/${todoId}/items`
+    `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos/${todoId}/items`
   );
   const apiJson = await apiResponse.json();
   const items = apiJson;

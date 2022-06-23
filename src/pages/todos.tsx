@@ -26,7 +26,9 @@ const Todos: any = ({ todos }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:8000/api/todos`);
+  const res = await fetch(
+    `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos`
+  );
   const data = await res.json();
   return { props: { todos: data } };
 }

@@ -19,7 +19,10 @@ const AddTodoForm = () => {
   };
 
   const addTodoAPICall = async (todoObj) => {
-    const res = await axios.post("http://localhost:8000/api/todos", todoObj);
+    const res = await axios.post(
+      "https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos",
+      todoObj
+    );
     return res.data;
   };
 

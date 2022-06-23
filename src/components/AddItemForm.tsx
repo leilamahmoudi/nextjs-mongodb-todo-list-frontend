@@ -19,7 +19,7 @@ const AddItemForm = ({ todoId }) => {
 
   const addItemAPICall = async (itemObj) => {
     const res = await axios.post(
-      `http://localhost:8000/api/todos/${todoId}/items`,
+      `https://nextjs-mongodb-todo-list-backe.herokuapp.com/api/todos/${todoId}/items`,
       itemObj
     );
     return res.data;
